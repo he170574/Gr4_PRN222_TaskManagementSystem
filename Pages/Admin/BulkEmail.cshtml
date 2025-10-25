@@ -1,0 +1,102 @@
+﻿@page
+@model CMS2.Pages.Admin.BulkEmailModel
+@{
+    Layout = "_Layout";
+}
+
+<div class="form-container">
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h2 class="text-center mb-0" style="color: #343a40;">Send Bulk Email</h2>
+        <a href="/Admin/AdminDashboard" class="btn btn-secondary">← Back to Dashboard</a>
+    </div>
+
+    <form method="post" enctype="multipart/form-data" class="needs-validation" novalidate>
+        <div class="mb-3">
+            <label for="Subject" class="form-label">Subject:</label>
+            <input asp-for="Subject" class="form-control" id="Subject" required />
+            <div class="invalid-feedback">Please enter a subject.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="Body" class="form-label">Body:</label>
+            <textarea asp-for="Body" class="form-control" id="Body" rows="5" required></textarea>
+            <div class="invalid-feedback">Please enter the email body.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="TargetRole" class="form-label">Send to:</label>
+            <select asp-for="TargetRole" asp-items="Model.RoleOptions" class="form-select" id="TargetRole" required>
+                <option value="">Select group</option>
+            </select>
+            <div class="invalid-feedback">Please select a group.</div>
+        </div>
+
+        <div class="mb-3">
+            <label for="Attachment" class="form-label">Attachment (optional):</label>
+            <input type="file" name="Attachment" class="form-control" id="Attachment" />
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Send Email</button>
+    </form>
+
+    @if (Model.SuccessMessage != null)
+    {
+        <div class="alert alert-success mt-3">@Model.SuccessMessage</div>
+    }
+
+    @if (Model.ErrorMessage != null)
+    {
+        <div class="alert alert-danger mt-3">@Model.ErrorMessage</div>
+    }
+</div>
+
+<style>
+    .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        border: 1px solid #dee2e6;
+        border-radius: 8px;
+        background-color: #ffffff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .form-label {
+        font-weight: 500;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
+    .needs-validation {
+        margin-bottom: 0;
+    }
+
+    header, footer {
+        display: none !important;
+    }
+</style>
+
+<script>
+    // Bootstrap form validation
+    (function () {
+        'use strict';
+        var forms = document.querySelectorAll('.needs-validation');
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault();
+                    event.stopPropagation();
+                }
+                form.classList.add('was-validated');
+            }, false);
+        });
+    })();
+</script>

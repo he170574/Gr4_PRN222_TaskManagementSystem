@@ -1,0 +1,745 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\CMS2.bundle.scp.css",
+      "PackagePath": "staticwebassets\\CMS2.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\css\\style.css",
+      "PackagePath": "staticwebassets\\css\\style.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-1.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-10.png",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-10.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-11.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-12.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-13.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-13.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-14.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-14.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-15.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-15.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-16.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-16.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-2.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-3.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-4.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-5.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-6.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-7.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-8.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\avatars\\thumb-9.jpg",
+      "PackagePath": "staticwebassets\\img\\avatars\\thumb-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\countries\\ar.png",
+      "PackagePath": "staticwebassets\\img\\countries\\ar.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\countries\\cn.png",
+      "PackagePath": "staticwebassets\\img\\countries\\cn.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\countries\\sp.png",
+      "PackagePath": "staticwebassets\\img\\countries\\sp.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\countries\\us.png",
+      "PackagePath": "staticwebassets\\img\\countries\\us.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\favicon.ico",
+      "PackagePath": "staticwebassets\\img\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\logo\\logo-dark-full.png",
+      "PackagePath": "staticwebassets\\img\\logo\\logo-dark-full.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\logo\\logo-light-full.png",
+      "PackagePath": "staticwebassets\\img\\logo\\logo-light-full.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\logo\\logo-light-streamline.png",
+      "PackagePath": "staticwebassets\\img\\logo\\logo-light-streamline.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\auth-cover-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\others\\auth-cover-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\auth-side-bg.jpg",
+      "PackagePath": "staticwebassets\\img\\others\\auth-side-bg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\img-1.jpg",
+      "PackagePath": "staticwebassets\\img\\others\\img-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\img-10.png",
+      "PackagePath": "staticwebassets\\img\\others\\img-10.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\img-11.jpg",
+      "PackagePath": "staticwebassets\\img\\others\\img-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\img-2.png",
+      "PackagePath": "staticwebassets\\img\\others\\img-2.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\img-8.png",
+      "PackagePath": "staticwebassets\\img\\others\\img-8.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\img-9.png",
+      "PackagePath": "staticwebassets\\img\\others\\img-9.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\pending-approval.png",
+      "PackagePath": "staticwebassets\\img\\others\\pending-approval.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\upload.png",
+      "PackagePath": "staticwebassets\\img\\others\\upload.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\others\\welcome.png",
+      "PackagePath": "staticwebassets\\img\\others\\welcome.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-1-2.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-1-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-1-3.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-1-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-1-4.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-1-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-1.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-10.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-10.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-11.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-11.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-12.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-12.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-2.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-2.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-3.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-3.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-4.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-4.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-5.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-5.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-6.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-6.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-7.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-7.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-8.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-8.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\products\\product-9.jpg",
+      "PackagePath": "staticwebassets\\img\\products\\product-9.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\adobe-xd.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\adobe-xd.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\avalanche.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\avalanche.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\bitcoin.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\bitcoin.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\doge.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\doge.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\dropbox.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\dropbox.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\eos.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\eos.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\ethereum.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\ethereum.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\figma.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\figma.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\github.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\github.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\gitlab.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\gitlab.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\google-drive.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\google-drive.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-0.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-0.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-1.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-1.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-2.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-2.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-3.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-3.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-4.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-4.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-5.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-5.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-6.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-6.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\help-center-category-7.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\help-center-category-7.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\hubspot.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\hubspot.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\jira.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\jira.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\classic-dark.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\classic-dark.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\classic.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\classic.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\decked-dark.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\decked-dark.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\decked.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\decked.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\modern-dark.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\modern-dark.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\modern.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\modern.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\simple-dark.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\simple-dark.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\simple.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\simple.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\stackedSide-dark.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\stackedSide-dark.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\layouts\\stackedSide.jpg",
+      "PackagePath": "staticwebassets\\img\\thumbs\\layouts\\stackedSide.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\litecoin.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\litecoin.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\notion.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\notion.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\passport-data.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\passport-data.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\passport.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\passport.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\polkadot.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\polkadot.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\polygon.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\polygon.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\shiba-inu.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\shiba-inu.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\sketch.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\sketch.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\slack.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\slack.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\solana.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\solana.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\stellar-lumens.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\stellar-lumens.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\tether-us.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\tether-us.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\tron.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\tron.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\zapier.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\zapier.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\img\\thumbs\\zendesk.png",
+      "PackagePath": "staticwebassets\\img\\thumbs\\zendesk.png"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\app.min.js",
+      "PackagePath": "staticwebassets\\js\\app.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\calendar.js",
+      "PackagePath": "staticwebassets\\js\\pages\\calendar.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\chart-demo.js",
+      "PackagePath": "staticwebassets\\js\\pages\\chart-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\crm-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\crm-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\crypto-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\crypto-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\customers.js",
+      "PackagePath": "staticwebassets\\js\\pages\\customers.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\edit-article.js",
+      "PackagePath": "staticwebassets\\js\\pages\\edit-article.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\form-demo.js",
+      "PackagePath": "staticwebassets\\js\\pages\\form-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\help-center.js",
+      "PackagePath": "staticwebassets\\js\\pages\\help-center.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\icons-demo.js",
+      "PackagePath": "staticwebassets\\js\\pages\\icons-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\kyc-form.js",
+      "PackagePath": "staticwebassets\\js\\pages\\kyc-form.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\mail.js",
+      "PackagePath": "staticwebassets\\js\\pages\\mail.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\maps-demo.js",
+      "PackagePath": "staticwebassets\\js\\pages\\maps-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\market.js",
+      "PackagePath": "staticwebassets\\js\\pages\\market.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\new-product.js",
+      "PackagePath": "staticwebassets\\js\\pages\\new-product.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\order-list.js",
+      "PackagePath": "staticwebassets\\js\\pages\\order-list.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\portfolio.js",
+      "PackagePath": "staticwebassets\\js\\pages\\portfolio.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\product-edit.js",
+      "PackagePath": "staticwebassets\\js\\pages\\product-edit.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\product-list.js",
+      "PackagePath": "staticwebassets\\js\\pages\\product-list.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\project-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\project-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\sales-dashboard.js",
+      "PackagePath": "staticwebassets\\js\\pages\\sales-dashboard.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\scrum-board.js",
+      "PackagePath": "staticwebassets\\js\\pages\\scrum-board.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\table-demo.js",
+      "PackagePath": "staticwebassets\\js\\pages\\table-demo.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\wallets.js",
+      "PackagePath": "staticwebassets\\js\\pages\\wallets.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\pages\\welcome.js",
+      "PackagePath": "staticwebassets\\js\\pages\\welcome.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\js\\vendors.min.js",
+      "PackagePath": "staticwebassets\\js\\vendors.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\bootstrap"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-grid.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\css\\bootstrap.rtl.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.bundle.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.esm.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\bootstrap\\dist\\js\\bootstrap.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation-unobtrusive\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation-unobtrusive\\jquery.validate.unobtrusive.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation\\LICENSE.md",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\LICENSE.md"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery-validation\\dist\\jquery.validate.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery-validation\\dist\\jquery.validate.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery\\LICENSE.txt",
+      "PackagePath": "staticwebassets\\lib\\jquery\\LICENSE.txt"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery\\dist\\jquery.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery\\dist\\jquery.min.js",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.js"
+    },
+    {
+      "Id": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\wwwroot\\lib\\jquery\\dist\\jquery.min.map",
+      "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.CMS2.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.CMS2.props",
+      "PackagePath": "build\\CMS2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.CMS2.props",
+      "PackagePath": "buildMultiTargeting\\CMS2.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.CMS2.props",
+      "PackagePath": "buildTransitive\\CMS2.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

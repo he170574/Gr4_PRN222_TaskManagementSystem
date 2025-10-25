@@ -1,0 +1,42 @@
+﻿@page "{id:int}"
+@model CMS2.Pages.Tasks.ViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <title>Task Details</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex items-center justify-center">
+
+    <div class="bg-white max-w-xl w-full p-8 rounded shadow-lg mt-10 mb-10">
+        <h2 class="text-2xl font-bold text-teal-600 mb-6">📋 Task Details</h2>
+
+        <div class="space-y-4 text-gray-800">
+            <p><strong>📝 Title:</strong> @Model.Task.Title</p>
+            <p><strong>📄 Description:</strong> @Model.Task.Description</p>
+            <p><strong>🕐 Created At:</strong> @Model.Task.CreatedAt.ToString("yyyy-MM-dd HH:mm")</p>
+            <p><strong>⏳ Due Date:</strong> @Model.Task.DueDate.ToString("yyyy-MM-dd HH:mm")</p>
+            <p>
+                <strong>📌 Status:</strong>
+                <span class="px-2 py-1 rounded text-white
+                    @(Model.Task.Status == "Pending" ? "bg-orange-500" :
+                      Model.Task.Status == "In Progress" ? "bg-yellow-500" :
+                      "bg-green-600")">
+                    @Model.Task.Status
+                </span>
+            </p>
+        </div>
+
+        <div class="mt-6 text-right">
+            <a href="/Tasks/ViewAll" class="text-sm text-teal-600 hover:underline">← Back to Task List</a>
+        </div>
+    </div>
+
+</body>
+</html>

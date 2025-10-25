@@ -1,0 +1,763 @@
+﻿@page
+@model CMS2.Pages.User.UserDashboardModel
+@using System.Text.Json
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>User Dashboard - Task Calendar</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.css" />
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #2d3748;
+        }
+
+        /* Header Styles */
+        .header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+            .nav-link.primary {
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                color: white;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            }
+
+                .nav-link.primary:hover {
+                    transform: translateY(-2px);
+                    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+                }
+
+            .nav-link.secondary {
+                color: #667eea;
+                border: 2px solid #667eea;
+            }
+
+                .nav-link.secondary:hover {
+                    background: #667eea;
+                    color: white;
+                }
+
+        /* Main Content */
+        .main-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .welcome-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .welcome-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .welcome-subtitle {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        /* Today Indicator */
+        .today-indicator {
+            background: linear-gradient(45deg, #10b981, #059669);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 12px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+            margin-top: 1rem;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        .today-date {
+            font-size: 1.1rem;
+            font-weight: 700;
+        }
+
+        .today-time {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            margin-left: 0.5rem;
+        }
+
+        /* Filter Controls */
+        .filter-section {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .filter-controls {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .filter-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .filter-label {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .filter-select {
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            min-width: 120px;
+        }
+
+            .filter-select:focus {
+                outline: none;
+                border-color: #667eea;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            }
+
+        /* Calendar Container */
+        .calendar-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #calendar {
+            margin: 0;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            box-shadow: none;
+        }
+
+        /* Calendar Customization */
+        .fc-toolbar-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+        }
+
+        .fc-button {
+            background: linear-gradient(45deg, #667eea, #764ba2) !important;
+            border: none !important;
+            border-radius: 8px !important;
+            padding: 0.5rem 1rem !important;
+            font-weight: 600 !important;
+            transition: all 0.3s ease !important;
+        }
+
+            .fc-button:hover {
+                transform: translateY(-1px) !important;
+                box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4) !important;
+            }
+
+        .fc-daygrid-day:hover {
+            background-color: rgba(102, 126, 234, 0.1);
+            cursor: pointer;
+        }
+
+        /* Today's date highlighting in calendar */
+        .fc-day-today {
+            background-color: rgba(16, 185, 129, 0.2) !important;
+            border: 2px solid #10b981 !important;
+        }
+
+            .fc-day-today .fc-daygrid-day-number {
+                background: linear-gradient(45deg, #10b981, #059669) !important;
+                color: white !important;
+                border-radius: 50% !important;
+                width: 30px !important;
+                height: 30px !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                font-weight: 700 !important;
+                margin: 2px !important;
+            }
+
+        .fc-event {
+            background: linear-gradient(45deg, #667eea, #764ba2) !important;
+            border: none !important;
+            border-radius: 6px !important;
+            padding: 2px 6px !important;
+            font-weight: 500 !important;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: block;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        .modal-content {
+            background: white;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 16px;
+            max-width: 450px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(0) scale(1);
+            transition: all 0.3s ease;
+        }
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .modal-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #22c55e;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .close {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #f7fafc;
+            border: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: #a0aec0;
+            font-size: 18px;
+        }
+
+            .close:hover {
+                background: #e2e8f0;
+                color: #4a5568;
+            }
+
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 3px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50%;
+            border-top-color: #667eea;
+        }
+
+        /* Modal Animation Classes */
+        .modal-show {
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+
+        .modal-hide {
+            opacity: 0;
+            transform: translateY(-50px) scale(0.9);
+        }
+
+        /* Loading Rotation */
+        .loading-spin {
+            transform: rotate(360deg);
+            transition: transform 1s linear;
+        }
+
+        /* Pulse animation for today indicator */
+        .pulse-animation {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        /* Live clock styling */
+        .live-clock {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-weight: 600;
+            color: #2d3748;
+            border-left: 4px solid #10b981;
+        }
+    </style>
+
+    <!-- External CSS for animations to avoid Razor conflicts -->
+    <link rel="stylesheet" href="data:text/css,
+        %40keyframes%20modalSlideIn%20%7B
+            from%20%7B
+                opacity%3A%200%3B
+                transform%3A%20translateY(-50px)%20scale(0.9)%3B
+            %7D
+            to%20%7B
+                opacity%3A%201%3B
+                transform%3A%20translateY(0)%20scale(1)%3B
+            %7D
+        %7D
+
+        %40keyframes%20modalSlideOut%20%7B
+            from%20%7B
+                opacity%3A%201%3B
+                transform%3A%20translateY(0)%20scale(1)%3B
+            %7D
+            to%20%7B
+                opacity%3A%200%3B
+                transform%3A%20translateY(-50px)%20scale(0.9)%3B
+            %7D
+        %7D
+
+        %40keyframes%20spin%20%7B
+            to%20%7B%20transform%3A%20rotate(360deg)%3B%20%7D
+        %7D
+
+        %40keyframes%20pulse%20%7B
+            0%25%2C%20100%25%20%7B
+                transform%3A%20scale(1)%3B
+                box-shadow%3A%200%204px%2015px%20rgba(16%2C%20185%2C%20129%2C%200.3)%3B
+            %7D
+            50%25%20%7B
+                transform%3A%20scale(1.05)%3B
+                box-shadow%3A%200%206px%2020px%20rgba(16%2C%20185%2C%20129%2C%200.5)%3B
+            %7D
+        %7D
+
+        .modal-slide-in%20%7B
+            animation%3A%20modalSlideIn%200.3s%20ease%3B
+        %7D
+
+        .modal-slide-out%20%7B
+            animation%3A%20modalSlideOut%200.3s%20ease%3B
+        %7D
+
+        .loading%20%7B
+            animation%3A%20spin%201s%20linear%20infinite%3B
+        %7D
+
+        .today-indicator%20%7B
+            animation%3A%20pulse%202s%20ease-in-out%20infinite%3B
+        %7D
+
+        %40media%20(max-width%3A%20768px)%20%7B
+            .main-container%20%7B
+                padding%3A%201rem%20!important%3B
+            %7D
+
+            .header-content%20%7B
+                padding%3A%201rem%20!important%3B
+            %7D
+
+            .filter-controls%20%7B
+                flex-direction%3A%20column%20!important%3B
+                align-items%3A%20stretch%20!important%3B
+                gap%3A%201rem%20!important%3B
+            %7D
+
+            .nav-links%20%7B
+                width%3A%20100%25%20!important%3B
+                justify-content%3A%20center%20!important%3B
+            %7D
+
+            .welcome-title%20%7B
+                font-size%3A%201.5rem%20!important%3B
+            %7D
+
+            .calendar-container%20%7B
+                padding%3A%201rem%20!important%3B
+            %7D
+        %7D
+    ">
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <i class="fas fa-tasks"></i> TaskFlow
+            </div>
+            <nav class="nav-links">
+                <a href="/Tasks/ViewAll" class="nav-link primary">
+                    <i class="fas fa-list"></i> View Tasks
+                </a>
+                <a href="/Tasks/TaskHistory" class="nav-link secondary">
+                    <i class="fas fa-history"></i> Task History
+                </a>
+                <a href="/User/Profile" class="nav-link secondary">
+                    <i class="fas fa-user"></i> Profile
+                </a>
+                <a href="/Account/SignOut" class="nav-link secondary">
+                    <i class="fas fa-sign-out-alt"></i> Sign Out
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <section class="welcome-section">
+            <h1 class="welcome-title">
+                <i class="fas fa-calendar-check"></i>
+                Welcome back, @Model.Username!
+            </h1>
+            <p class="welcome-subtitle">
+                Manage your tasks efficiently with our intuitive calendar interface. Click on any date to create a new task.
+            </p>
+            <div class="today-indicator">
+                <i class="fas fa-calendar-day"></i>
+                <span>Today: </span>
+                <span class="today-date" id="todayDate"></span>
+                <span class="today-time" id="currentTime"></span>
+            </div>
+        </section>
+
+        <section class="filter-section">
+            <div class="filter-controls">
+                <div class="filter-group">
+                    <label for="month" class="filter-label">
+                        <i class="fas fa-calendar-alt"></i> Month
+                    </label>
+                    <select id="month" class="filter-select">
+                        @for (int i = 1; i <= 12; i++)
+                        {
+                            <option value="@i">@System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(i)</option>
+                        }
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="year" class="filter-label">
+                        <i class="fas fa-calendar"></i> Year
+                    </label>
+                    <select id="year" class="filter-select">
+                        @{
+                            int currentYear = DateTime.Now.Year;
+                            for (int y = currentYear - 5; y <= currentYear + 5; y++)
+                            {
+                                <option value="@y" selected="@(y == currentYear ? "selected" : null)">@y</option>
+                            }
+                        }
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Quick Actions</span>
+                    <button onclick="goToToday()" class="nav-link primary" style="border: none; cursor: pointer;">
+                        <i class="fas fa-bullseye"></i> Go to Today
+                    </button>
+                </div>
+                <div class="filter-group">
+                    <span class="filter-label">Current Time</span>
+                    <div class="live-clock" id="liveClock"></div>
+                </div>
+            </div>
+        </section>
+
+        <section class="calendar-container">
+            <div id="calendar"></div>
+        </section>
+
+        @* Success Modal *@
+        @if (TempData["SuccessMessage"] != null)
+        {
+            <div id="successModal" class="modal">
+                <div class="modal-content modal-slide-in">
+                    <div class="modal-header">
+                        <h3 class="modal-title">
+                            <i class="fas fa-check-circle"></i>
+                            Success!
+                        </h3>
+                        <button class="close" onclick="closeSuccessModal()">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                    <p>@TempData["SuccessMessage"]</p>
+                </div>
+            </div>
+        }
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/fullcalendar@6.1.8/index.global.min.js"></script>
+    <script>
+        // Update today's date and current time
+        function updateDateTime() {
+            const now = new Date();
+
+            // Format today's date
+            const options = {
+                weekday: 'long',
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric'
+            };
+            const todayFormatted = now.toLocaleDateString('en-US', options);
+            const todayElement = document.getElementById('todayDate');
+            if (todayElement) {
+                todayElement.textContent = todayFormatted;
+            }
+
+            // Format current time
+            const timeOptions = {
+                hour: '2-digit',
+                minute: '2-digit',
+                second: '2-digit',
+                hour12: true
+            };
+            const timeFormatted = now.toLocaleTimeString('en-US', timeOptions);
+            const timeElement = document.getElementById('currentTime');
+            if (timeElement) {
+                timeElement.textContent = timeFormatted;
+            }
+
+            // Update live clock - this is the main clock display
+            const clockElement = document.getElementById('liveClock');
+            if (clockElement) {
+                clockElement.textContent = timeFormatted;
+            }
+
+            // Debug log to check if function is running
+            console.log('Time updated:', timeFormatted);
+        }
+
+        // Update time every second
+        setInterval(updateDateTime, 1000);
+
+        // Call immediately when page loads
+        setTimeout(updateDateTime, 100);
+
+        document.addEventListener('DOMContentLoaded', function () {
+            // Also call when DOM is ready
+            updateDateTime();
+            const calendarEl = document.getElementById('calendar');
+            let calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                height: 'auto',
+                selectable: true,
+                headerToolbar: {
+                    start: 'prev,next today',
+                    center: 'title',
+                    end: 'dayGridMonth,timeGridWeek'
+                },
+                events: @Html.Raw(JsonSerializer.Serialize(Model.Events)),
+                eventDisplay: 'block',
+
+                // Enhanced date click with better UX
+                dateClick: function (info) {
+                    const selectedDate = info.dateStr;
+                    const formattedDate = new Date(selectedDate).toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    if (confirm('Create a new task for ' + formattedDate + '?')) {
+                        // Add loading state
+                        const loadingDiv = document.createElement('div');
+                        loadingDiv.innerHTML = '<div class="loading"></div>';
+                        loadingDiv.style.position = 'fixed';
+                        loadingDiv.style.top = '50%';
+                        loadingDiv.style.left = '50%';
+                        loadingDiv.style.transform = 'translate(-50%, -50%)';
+                        loadingDiv.style.zIndex = '9999';
+                        loadingDiv.style.background = 'rgba(255,255,255,0.9)';
+                        loadingDiv.style.padding = '20px';
+                        loadingDiv.style.borderRadius = '10px';
+                        document.body.appendChild(loadingDiv);
+
+                        // Start loading animation
+                        const spinner = loadingDiv.querySelector('.loading');
+                        let rotation = 0;
+                        const rotateInterval = setInterval(() => {
+                            rotation += 30;
+                            spinner.style.transform = 'rotate(' + rotation + 'deg)';
+                        }, 50);
+
+                        setTimeout(() => {
+                            clearInterval(rotateInterval);
+                            window.location.href = '/Tasks/Create?date=' + selectedDate;
+                        }, 500);
+                    }
+                },
+
+                // Enhanced event click
+                eventClick: function (info) {
+                    const event = info.event;
+                    const eventDate = event.start.toLocaleDateString('en-US', {
+                        weekday: 'long',
+                        year: 'numeric',
+                        month: 'long',
+                        day: 'numeric'
+                    });
+
+                    alert('Task: ' + event.title + '\nDate: ' + eventDate);
+                }
+            });
+
+            calendar.render();
+
+            // Highlight today's date after calendar renders
+            setTimeout(() => {
+                const todayElement = document.querySelector('.fc-day-today');
+                if (todayElement) {
+                    // Add extra highlight for today
+                    todayElement.style.position = 'relative';
+                    todayElement.style.overflow = 'visible';
+
+                    // Create today badge
+                    const todayBadge = document.createElement('div');
+                    todayBadge.innerHTML = '<i class="fas fa-star"></i>';
+                    todayBadge.style.position = 'absolute';
+                    todayBadge.style.top = '-5px';
+                    todayBadge.style.right = '-5px';
+                    todayBadge.style.background = '#f59e0b';
+                    todayBadge.style.color = 'white';
+                    todayBadge.style.borderRadius = '50%';
+                    todayBadge.style.width = '20px';
+                    todayBadge.style.height = '20px';
+                    todayBadge.style.display = 'flex';
+                    todayBadge.style.alignItems = 'center';
+                    todayBadge.style.justifyContent = 'center';
+                    todayBadge.style.fontSize = '10px';
+                    todayBadge.style.zIndex = '10';
+                    todayBadge.style.boxShadow = '0 2px 4px rgba(0,0,0,0.2)';
+                    todayElement.appendChild(todayBadge);
+                }
+            }, 100);
+
+            // Set current month/year
+            const now = new Date();
+            document.getElementById('month').value = now.getMonth() + 1;
+            document.getElementById('year').value = now.getFullYear();
+
+            // Month and year filter
+            document.getElementById('month').addEventListener('change', updateCalendar);
+            document.getElementById('year').addEventListener('change', updateCalendar);
+
+            function updateCalendar() {
+                const month = document.getElementById('month').value;
+                const year = document.getElementById('year').value;
+                calendar.gotoDate(year + '-' + month.toString().padStart(2, '0') + '-01');
+            }
+
+            // Go to today function
+            window.goToToday = function () {
+                const now = new Date();
+                document.getElementById('month').value = now.getMonth() + 1;
+                document.getElementById('year').value = now.getFullYear();
+                calendar.today();
+            };
+        });
+
+        function closeSuccessModal() {
+            const modal = document.getElementById("successModal");
+            const content = modal.querySelector('.modal-content');
+
+            // Add slide out animation
+            content.classList.remove('modal-slide-in');
+            content.classList.add('modal-slide-out');
+
+            setTimeout(() => {
+                modal.style.display = "none";
+            }, 300);
+        }
+
+        // Enhanced modal interactions
+        window.onclick = function (event) {
+            if (event.target.id === "successModal") {
+                closeSuccessModal();
+            }
+        };
+    </script>
+</body>
+</html>

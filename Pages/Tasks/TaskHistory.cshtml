@@ -1,0 +1,89 @@
+﻿@page
+@model TaskHistoryModel
+@{
+    ViewData["Title"] = "Task History";
+    Layout = null; // Ẩn header & footer mặc định
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"]</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col items-center py-10">
+
+    <div class="bg-white shadow-lg rounded-xl p-6 w-11/12 lg:w-8/12">
+
+        <!-- Header + Back Button -->
+        <div class="flex items-center justify-between mb-6 border-b pb-3">
+            <h2 class="text-3xl font-bold text-gray-800 flex items-center gap-2">
+                 Task History
+            </h2>
+            <a asp-page="/User/UserDashboard" class="text-sm text-blue-600 hover:underline">← Back to Dashboard</a>
+        </div>
+
+        <!-- Table -->
+        <div class="overflow-x-auto">
+            <table class="min-w-full text-sm text-left border border-gray-200 rounded-lg overflow-hidden">
+                <thead class="bg-gradient-to-r from-blue-500 to-blue-600 text-white">
+                    <tr>
+                        <th class="px-6 py-3">Task Title</th>
+                        <th class="px-6 py-3">Action</th>
+                        <th class="px-6 py-3">Changed By</th>
+                        <th class="px-6 py-3">Changed At</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @if (Model.Histories.Any())
+                    {
+                        foreach (var history in Model.Histories)
+                        {
+                            <tr class="border-b hover:bg-blue-50 transition duration-150">
+                                <td class="px-6 py-4 font-medium text-gray-700">@history.Task.Title</td>
+                                <td class="px-6 py-4">
+                                    @if (history.Action == "Created")
+                                    {
+                                        <span class="px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-semibold">
+                                            Created
+                                        </span>
+                                    }
+                                    else if (history.Action == "Updated")
+                                    {
+                                        <span class="px-3 py-1 bg-yellow-100 text-yellow-700 rounded-full text-xs font-semibold">
+                                            Updated
+                                        </span>
+                                    }
+                                    else if (history.Action == "Deleted")
+                                    {
+                                        <span class="px-3 py-1 bg-red-100 text-red-700 rounded-full text-xs font-semibold">
+                                            Deleted
+                                        </span>
+                                    }
+                                    else
+                                    {
+                                        @history.Action
+                                    }
+                                </td>
+                                <td class="px-6 py-4 text-gray-600">@history.ChangedBy</td>
+                                <td class="px-6 py-4 text-gray-500">@history.ChangedAt.ToString("dd/MM/yyyy HH:mm")</td>
+                            </tr>
+                        }
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4" class="px-6 py-4 text-center text-gray-500">
+                                No history available
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,583 @@
+﻿@page "/SignIn"
+@model CMS2.Pages.Account.SignInModel
+@{
+    Layout = null;
+    var logoutMessage = TempData["Message"] as string;
+}
+<!DOCTYPE html>
+<html lang="en" dir="ltr" class="light">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign In - Task Manager</title>
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        #root {
+            height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            position: relative;
+        }
+
+        /* Animated Background */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .shape-2 {
+            width: 60px;
+            height: 60px;
+            top: 70%;
+            left: 80%;
+            animation: float 8s ease-in-out infinite reverse;
+        }
+
+        .shape-3 {
+            width: 40px;
+            height: 40px;
+            top: 40%;
+            left: 70%;
+            animation: float 7s ease-in-out infinite;
+        }
+
+        .shape-4 {
+            width: 100px;
+            height: 100px;
+            top: 60%;
+            left: 20%;
+            animation: float 9s ease-in-out infinite reverse;
+        }
+
+        /* Main Container */
+        .signin-container {
+            position: relative;
+            z-index: 2;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .signin-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
+            max-width: 450px;
+            position: relative;
+        }
+
+        /* Header Section */
+        .signin-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .logo-section {
+            margin-bottom: 2rem;
+        }
+
+        .logo-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+            .logo-icon i {
+                font-size: 2.5rem;
+                color: white;
+            }
+
+        .logo-text {
+            font-size: 2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-title {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+        }
+
+        .welcome-subtitle {
+            color: #718096;
+            font-size: 1rem;
+        }
+
+        /* Form Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-label {
+            display: block;
+            font-weight: 600;
+            color: #4a5568;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        .input-container {
+            position: relative;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+        }
+
+            .form-input:focus {
+                outline: none;
+                border-color: #667eea;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                background: white;
+            }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            font-size: 1.1rem;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #a0aec0;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
+
+            .password-toggle:hover {
+                color: #667eea;
+            }
+
+        /* Form Options */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+        }
+
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .custom-checkbox {
+            width: 18px;
+            height: 18px;
+            border: 2px solid #e2e8f0;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+            .custom-checkbox.checked {
+                background: linear-gradient(45deg, #667eea, #764ba2);
+                border-color: #667eea;
+            }
+
+            .custom-checkbox i {
+                color: white;
+                font-size: 12px;
+                opacity: 0;
+                transition: opacity 0.3s ease;
+            }
+
+            .custom-checkbox.checked i {
+                opacity: 1;
+            }
+
+        .forgot-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+            .forgot-link:hover {
+                color: #764ba2;
+                text-decoration: underline;
+            }
+
+        /* Submit Button */
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            margin-bottom: 1.5rem;
+        }
+
+            .submit-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            }
+
+            .submit-btn:active {
+                transform: translateY(0);
+            }
+
+        /* Alerts */
+        .alert {
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #059669;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+        }
+
+        .alert-error {
+            background: rgba(239, 68, 68, 0.1);
+            color: #dc2626;
+            border: 1px solid rgba(239, 68, 68, 0.2);
+        }
+
+        /* Sign Up Link */
+        .signup-section {
+            text-align: center;
+            color: #718096;
+        }
+
+        .signup-link {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+            .signup-link:hover {
+                color: #764ba2;
+            }
+
+        /* Loading State */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            margin-right: 0.5rem;
+        }
+
+        /* Responsive Design */
+        .signin-container {
+            padding: 1rem;
+        }
+
+        .signin-card {
+            padding: 2rem;
+            margin: 1rem;
+        }
+
+        .welcome-title {
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            font-size: 1.5rem;
+        }
+    </style>
+
+    <!-- External CSS for animations -->
+    <link rel="stylesheet" href="data:text/css,
+        %40keyframes%20float%20%7B
+            0%25%2C%20100%25%20%7B
+                transform%3A%20translateY(0px)%3B
+            %7D
+            50%25%20%7B
+                transform%3A%20translateY(-20px)%3B
+            %7D
+        %7D
+
+        %40keyframes%20spin%20%7B
+            to%20%7B%20transform%3A%20rotate(360deg)%3B%20%7D
+        %7D
+
+        .loading%20%7B
+            animation%3A%20spin%201s%20linear%20infinite%3B
+        %7D
+
+        %40media%20(max-width%3A%20768px)%20%7B
+            .signin-container%20%7B
+                padding%3A%201rem%20!important%3B
+            %7D
+
+            .signin-card%20%7B
+                padding%3A%202rem%20!important%3B
+                margin%3A%201rem%20!important%3B
+            %7D
+
+            .welcome-title%20%7B
+                font-size%3A%201.5rem%20!important%3B
+            %7D
+
+            .logo-text%20%7B
+                font-size%3A%201.5rem%20!important%3B
+            %7D
+        %7D
+    ">
+</head>
+<body>
+    <div id="root">
+        <!-- Animated Background -->
+        <div class="background-animation">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+            </div>
+        </div>
+
+        <!-- Main Signin Container -->
+        <div class="signin-container">
+            <div class="signin-card">
+                <!-- Header -->
+                <div class="signin-header">
+                    <div class="logo-section">
+                        <div class="logo-icon">
+                            <i class="fas fa-tasks"></i>
+                        </div>
+                        <div class="logo-text">TaskFlow</div>
+                    </div>
+                    <h1 class="welcome-title">Welcome back!</h1>
+                    <p class="welcome-subtitle">Please enter your credentials to sign in</p>
+                </div>
+
+                <!-- Logout Success Message -->
+                @if (!string.IsNullOrEmpty(logoutMessage))
+                {
+                    <div id="logout-alert" class="alert alert-success">
+                        <i class="fas fa-check-circle"></i>
+                        @logoutMessage
+                    </div>
+                }
+
+                <!-- Sign In Form -->
+                <form method="post">
+                    <!-- Username Field -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-user"></i> Username
+                        </label>
+                        <div class="input-container">
+                            <i class="fas fa-user input-icon"></i>
+                            <input class="form-input" asp-for="Username" autocomplete="off" placeholder="Enter your username" />
+                        </div>
+                    </div>
+
+                    <!-- Password Field -->
+                    <div class="form-group">
+                        <label class="form-label">
+                            <i class="fas fa-lock"></i> Password
+                        </label>
+                        <div class="input-container">
+                            <i class="fas fa-lock input-icon"></i>
+                            <input class="form-input" type="password" asp-for="Password" id="PasswordInput" placeholder="Enter your password" />
+                            <i class="fas fa-eye password-toggle" id="togglePassword" onclick="togglePassword()"></i>
+                        </div>
+                    </div>
+
+                    <!-- Form Options -->
+                    <div class="form-options">
+                        <div class="checkbox-container">
+                            <div class="custom-checkbox" id="rememberCheckbox" onclick="toggleRememberMe()">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <input type="hidden" asp-for="RememberMe" id="rememberMeInput" />
+                            <label>Remember Me</label>
+                        </div>
+                        <a class="forgot-link" href="/ForgotPassword">
+                            <i class="fas fa-question-circle"></i> Forgot Password?
+                        </a>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button class="submit-btn" type="submit" id="submitBtn">
+                        <span id="submitText">
+                            <i class="fas fa-sign-in-alt"></i> Sign In
+                        </span>
+                        <span id="loadingText" style="display: none;">
+                            <div class="loading"></div> Signing in...
+                        </span>
+                    </button>
+
+                    <!-- Error Message -->
+                    @if (!string.IsNullOrEmpty(Model.Message))
+                    {
+                        <div class="alert alert-error">
+                            <i class="fas fa-exclamation-circle"></i>
+                            @Model.Message
+                        </div>
+                    }
+
+                    <!-- Sign Up Link -->
+                    <div class="signup-section">
+                        Don't have an account yet?
+                        <a class="signup-link" href="/SignUp">
+                            <i class="fas fa-user-plus"></i> Sign up
+                        </a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Password visibility toggle
+        function togglePassword() {
+            const input = document.getElementById("PasswordInput");
+            const icon = document.getElementById("togglePassword");
+
+            if (input.type === "password") {
+                input.type = "text";
+                icon.classList.remove("fa-eye");
+                icon.classList.add("fa-eye-slash");
+            } else {
+                input.type = "password";
+                icon.classList.remove("fa-eye-slash");
+                icon.classList.add("fa-eye");
+            }
+        }
+
+        // Remember Me checkbox toggle
+        function toggleRememberMe() {
+            const checkbox = document.getElementById("rememberCheckbox");
+            const input = document.getElementById("rememberMeInput");
+
+            if (checkbox.classList.contains("checked")) {
+                checkbox.classList.remove("checked");
+                input.value = "false";
+            } else {
+                checkbox.classList.add("checked");
+                input.value = "true";
+            }
+        }
+
+        // Form submission with loading state
+        document.querySelector('form').addEventListener('submit', function () {
+            const submitBtn = document.getElementById('submitBtn');
+            const submitText = document.getElementById('submitText');
+            const loadingText = document.getElementById('loadingText');
+
+            submitBtn.disabled = true;
+            submitText.style.display = 'none';
+            loadingText.style.display = 'flex';
+            loadingText.style.alignItems = 'center';
+            loadingText.style.justifyContent = 'center';
+        });
+
+        // Auto-hide logout message
+        window.onload = function () {
+            const alert = document.getElementById("logout-alert");
+            if (alert) {
+                setTimeout(() => {
+                    alert.style.opacity = '0';
+                    alert.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        alert.style.display = 'none';
+                    }, 300);
+                }, 4000);
+            }
+        };
+
+        // Focus effects
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function () {
+                this.parentElement.querySelector('.input-icon').style.color = '#667eea';
+            });
+
+            input.addEventListener('blur', function () {
+                this.parentElement.querySelector('.input-icon').style.color = '#a0aec0';
+            });
+        });
+    </script>
+</body>
+</html>

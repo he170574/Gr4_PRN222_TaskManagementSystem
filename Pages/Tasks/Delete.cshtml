@@ -1,0 +1,177 @@
+﻿@page
+@model CMS2.Pages.Tasks.DeleteModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Delete Task";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Task - Task Manager</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+        .glass-effect {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .shake-animation:hover {
+            animation: shake 0.5s;
+        }
+        @@keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            10%, 30%, 50%, 70%, 90% { transform: translateX(-2px); }
+            20%, 40%, 60%, 80% { transform: translateX(2px); }
+        }
+        .task-card {
+            transition: all 0.3s ease;
+        }
+        .task-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="gradient-bg min-h-screen flex items-center justify-center p-4">
+    <div class="max-w-2xl w-full">
+        <!-- Main Card -->
+        <div class="glass-effect rounded-2xl shadow-2xl overflow-hidden">
+            <!-- Header -->
+            <div class="bg-gradient-to-r from-red-500 to-pink-600 p-6 text-white">
+                <div class="flex items-center space-x-3">
+                    <div class="bg-white bg-opacity-20 rounded-full p-3">
+                        <i class="fas fa-exclamation-triangle text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="text-3xl font-bold">Confirm Deletion</h1>
+                        <p class="text-red-100 mt-1">This action cannot be undone</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content -->
+            <div class="p-8">
+                <div class="text-center mb-8">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-4">
+                        <i class="fas fa-trash-alt text-2xl text-red-500"></i>
+                    </div>
+                    <p class="text-lg text-gray-700">
+                        Are you sure you want to delete this task? This action is permanent and cannot be reversed.
+                    </p>
+                </div>
+
+                <!-- Task Details Card -->
+                <div class="task-card bg-gradient-to-br from-gray-50 to-gray-100 border border-gray-200 rounded-xl p-6 mb-8 shadow-lg">
+                    <div class="flex items-start space-x-4">
+                        <div class="flex-shrink-0">
+                            <div class="w-12 h-12 bg-blue-500 rounded-lg flex items-center justify-center">
+                                <i class="fas fa-tasks text-white text-lg"></i>
+                            </div>
+                        </div>
+                        <div class="flex-1 min-w-0">
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-heading text-gray-400 mt-1"></i>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Title</p>
+                                            <p class="text-lg font-semibold text-gray-900">@Model.Task?.Title</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-align-left text-gray-400 mt-1"></i>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Description</p>
+                                            <p class="text-gray-700">@Model.Task?.Description</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="space-y-3">
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-calendar-alt text-gray-400 mt-1"></i>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Due Date</p>
+                                            <p class="text-gray-700 font-medium">@Model.Task?.DueDate.ToString("MMM dd, yyyy 'at' hh:mm tt")</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start space-x-2">
+                                        <i class="fas fa-info-circle text-gray-400 mt-1"></i>
+                                        <div>
+                                            <p class="text-sm font-medium text-gray-500">Status</p>
+                                            <span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium
+                                                @(Model.Task?.Status == "Completed" ? "bg-green-100 text-green-800" : 
+                                                  Model.Task?.Status == "In Progress" ? "bg-yellow-100 text-yellow-800" : 
+                                                  "bg-gray-100 text-gray-800")">
+                                                @Model.Task?.Status
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <form method="post">
+                    <input type="hidden" asp-for="Task.Id" />
+                    <div class="flex flex-col sm:flex-row sm:justify-between space-y-3 sm:space-y-0 sm:space-x-4">
+                        <a href="/User/UserDashboard" 
+                           class="inline-flex items-center justify-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50 hover:border-gray-400 transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                            <i class="fas fa-arrow-left mr-2"></i>
+                            Cancel & Go Back
+                        </a>
+                        <button type="submit" 
+                                class="shake-animation inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-gradient-to-r from-red-500 to-red-600 hover:from-red-600 hover:to-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 shadow-lg transform transition-all duration-200 hover:shadow-xl">
+                            <i class="fas fa-trash-alt mr-2"></i>
+                            Delete Task Permanently
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Footer Warning -->
+            <div class="bg-red-50 border-t border-red-200 p-4">
+                <div class="flex items-center space-x-2 text-red-700">
+                    <i class="fas fa-exclamation-circle"></i>
+                    <p class="text-sm font-medium">Warning: This action is irreversible. The task will be permanently deleted from the system.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional Info Card -->
+        <div class="mt-6 text-center">
+            <div class="inline-flex items-center space-x-2 text-white text-sm bg-white bg-opacity-20 rounded-full px-4 py-2">
+                <i class="fas fa-shield-alt"></i>
+                <span>Your data is securely managed</span>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Add some interactive effects
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add confirmation dialog for extra safety
+            const deleteForm = document.querySelector('form');
+            deleteForm.addEventListener('submit', function(e) {
+                if (!confirm('Are you absolutely sure you want to delete this task? This cannot be undone.')) {
+                    e.preventDefault();
+                }
+            });
+
+            // Add keyboard shortcuts
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    window.location.href = '/User/UserDashboard';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

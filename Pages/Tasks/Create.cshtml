@@ -1,0 +1,756 @@
+﻿@page
+@model CMS2.Pages.Tasks.CreateModel
+@{
+    Layout = null;
+    ViewData["Title"] = "Create Task";
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Create Task - TaskFlow</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            color: #2d3748;
+            position: relative;
+        }
+
+        /* Animated Background */
+        .background-animation {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .floating-shapes {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+        }
+
+        .shape {
+            position: absolute;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        .shape-1 {
+            width: 100px;
+            height: 100px;
+            top: 15%;
+            left: 85%;
+        }
+
+        .shape-2 {
+            width: 80px;
+            height: 80px;
+            top: 75%;
+            left: 10%;
+        }
+
+        .shape-3 {
+            width: 60px;
+            height: 60px;
+            top: 30%;
+            left: 20%;
+        }
+
+        .shape-4 {
+            width: 120px;
+            height: 120px;
+            top: 60%;
+            left: 80%;
+        }
+
+        /* Main Container */
+        .main-container {
+            position: relative;
+            z-index: 2;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
+        .create-task-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-radius: 24px;
+            padding: 3rem;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            width: 100%;
+            max-width: 700px;
+            margin: 2rem 0;
+        }
+
+        /* Header */
+        .page-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .header-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+            .header-icon i {
+                font-size: 2.5rem;
+                color: white;
+            }
+
+        .page-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+
+        .page-subtitle {
+            color: #718096;
+            font-size: 1.1rem;
+        }
+
+        /* Success Alert */
+        .alert-success {
+            background: rgba(34, 197, 94, 0.1);
+            color: #059669;
+            border: 1px solid rgba(34, 197, 94, 0.2);
+            padding: 1rem;
+            border-radius: 12px;
+            margin-bottom: 2rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Form Styles */
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .form-label {
+            font-weight: 600;
+            color: #4a5568;
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .form-input {
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.8);
+            min-height: 50px;
+        }
+
+            .form-input:focus {
+                outline: none;
+                border-color: #667eea;
+                box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+                background: white;
+            }
+
+        .form-textarea {
+            resize: vertical;
+            min-height: 120px;
+            font-family: inherit;
+        }
+
+        .form-select {
+            cursor: pointer;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.5rem center;
+            background-repeat: no-repeat;
+            background-size: 1.5em 1.5em;
+            padding-right: 2.5rem;
+            appearance: none;
+        }
+
+        /* Status Select Styling */
+        .status-options {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .status-option {
+            position: relative;
+        }
+
+        .status-radio {
+            position: absolute;
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .status-label {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: rgba(255, 255, 255, 0.5);
+        }
+
+            .status-label:hover {
+                border-color: #667eea;
+                background: rgba(102, 126, 234, 0.05);
+            }
+
+        .status-radio:checked + .status-label {
+            border-color: #667eea;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.1), rgba(118, 75, 162, 0.1));
+            color: #667eea;
+        }
+
+        .status-icon {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .status-text {
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* Error Messages */
+        .validation-error {
+            color: #dc2626;
+            font-size: 0.875rem;
+            margin-top: 0.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+
+        /* Form Actions */
+        .form-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+
+        .back-link {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #667eea;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+        }
+
+            .back-link:hover {
+                background: rgba(102, 126, 234, 0.1);
+                text-decoration: none;
+            }
+
+        .submit-btn {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 1rem 2rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+        }
+
+            .submit-btn:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+            }
+
+            .submit-btn:active {
+                transform: translateY(0);
+            }
+
+            .submit-btn:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+                transform: none;
+            }
+
+        /* Loading State */
+        .loading {
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+        }
+
+        /* Date Input Enhancement */
+        .datetime-container {
+            position: relative;
+        }
+
+        .datetime-helper {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            pointer-events: none;
+        }
+
+        /* Responsive Design */
+        .main-container {
+            padding: 1rem;
+        }
+
+        .create-task-card {
+            padding: 2rem;
+            margin: 1rem 0;
+        }
+
+        .page-title {
+            font-size: 1.8rem;
+        }
+
+        .status-options {
+            grid-template-columns: 1fr;
+        }
+
+        .form-actions {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: stretch;
+        }
+
+        .back-link {
+            justify-content: center;
+        }
+    </style>
+
+    <!-- External CSS for animations -->
+    <link rel="stylesheet" href="data:text/css,
+        %40keyframes%20float%20%7B
+            0%25%2C%20100%25%20%7B
+                transform%3A%20translateY(0px)%20rotate(0deg)%3B
+            %7D
+            50%25%20%7B
+                transform%3A%20translateY(-20px)%20rotate(180deg)%3B
+            %7D
+        %7D
+
+        %40keyframes%20spin%20%7B
+            to%20%7B%20transform%3A%20rotate(360deg)%3B%20%7D
+        %7D
+
+        .shape-1%20%7B
+            animation%3A%20float%208s%20ease-in-out%20infinite%3B
+        %7D
+
+        .shape-2%20%7B
+            animation%3A%20float%206s%20ease-in-out%20infinite%20reverse%3B
+        %7D
+
+        .shape-3%20%7B
+            animation%3A%20float%207s%20ease-in-out%20infinite%3B
+        %7D
+
+        .shape-4%20%7B
+            animation%3A%20float%209s%20ease-in-out%20infinite%20reverse%3B
+        %7D
+
+        .loading%20%7B
+            animation%3A%20spin%201s%20linear%20infinite%3B
+        %7D
+
+        %40media%20(max-width%3A%20768px)%20%7B
+            .main-container%20%7B
+                padding%3A%201rem%20!important%3B
+            %7D
+
+            .create-task-card%20%7B
+                padding%3A%202rem%20!important%3B
+                margin%3A%201rem%200%20!important%3B
+            %7D
+
+            .page-title%20%7B
+                font-size%3A%201.8rem%20!important%3B
+            %7D
+
+            .status-options%20%7B
+                grid-template-columns%3A%201fr%20!important%3B
+            %7D
+
+            .form-actions%20%7B
+                flex-direction%3A%20column%20!important%3B
+                gap%3A%201rem%20!important%3B
+                align-items%3A%20stretch%20!important%3B
+            %7D
+
+            .back-link%20%7B
+                justify-content%3A%20center%20!important%3B
+            %7D
+        %7D
+    ">
+</head>
+<body>
+    <!-- Animated Background -->
+    <div class="background-animation">
+        <div class="floating-shapes">
+            <div class="shape shape-1"></div>
+            <div class="shape shape-2"></div>
+            <div class="shape shape-3"></div>
+            <div class="shape shape-4"></div>
+        </div>
+    </div>
+
+    <!-- Main Container -->
+    <div class="main-container">
+        <div class="create-task-card">
+            <!-- Header -->
+            <div class="page-header">
+                <div class="header-icon">
+                    <i class="fas fa-plus-circle"></i>
+                </div>
+                <h1 class="page-title">Create New Task</h1>
+                <p class="page-subtitle">Fill out the details below to create a new task</p>
+            </div>
+
+            <!-- Success Message -->
+            @if (TempData["SuccessMessage"] != null)
+            {
+                <div class="alert-success" id="successAlert">
+                    <i class="fas fa-check-circle"></i>
+                    @TempData["SuccessMessage"]
+                </div>
+            }
+
+            <!-- Create Task Form -->
+            <form method="post" class="form-container" id="createTaskForm">
+                <!-- Title Field -->
+                <div class="form-group">
+                    <label asp-for="Task.Title" class="form-label">
+                        <i class="fas fa-heading"></i>
+                        Task Title
+                    </label>
+                    <input asp-for="Task.Title"
+                           class="form-input"
+                           placeholder="Enter a descriptive task title..."
+                           maxlength="100" />
+                    <span asp-validation-for="Task.Title" class="validation-error">
+                       
+                    </span>
+                </div>
+
+                <!-- Description Field -->
+                <div class="form-group">
+                    <label asp-for="Task.Description" class="form-label">
+                        <i class="fas fa-align-left"></i>
+                        Description
+                    </label>
+                    <textarea asp-for="Task.Description"
+                              class="form-input form-textarea"
+                              placeholder="Provide detailed information about the task..."
+                              maxlength="500"></textarea>
+                    <span asp-validation-for="Task.Description" class="validation-error">
+                        
+                    </span>
+                </div>
+
+                <!-- Due Date Field -->
+                <div class="form-group">
+                    <label asp-for="Task.DueDate" class="form-label">
+                        <i class="fas fa-calendar-alt"></i>
+                        Due Date & Time
+                    </label>
+                    <div class="datetime-container">
+                        <input asp-for="Task.DueDate"
+                               type="datetime-local"
+                               class="form-input"
+                               id="dueDateInput" />
+                        <div class="datetime-helper">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Task.DueDate" class="validation-error">
+                        
+                    </span>
+                </div>
+
+                <!-- Status Field with Custom Radio Buttons -->
+                <div class="form-group">
+                    <label class="form-label">
+                        <i class="fas fa-tasks"></i>
+                        Task Status
+                    </label>
+                    <div class="status-options">
+                        <div class="status-option">
+                            <input type="radio"
+                                   asp-for="Task.Status"
+                                   value="Pending"
+                                   class="status-radio"
+                                   id="status-pending"
+                                   checked />
+                            <label for="status-pending" class="status-label">
+                                <i class="fas fa-hourglass-start status-icon" style="color: #f59e0b;"></i>
+                                <span class="status-text">Pending</span>
+                            </label>
+                        </div>
+                        <div class="status-option">
+                            <input type="radio"
+                                   asp-for="Task.Status"
+                                   value="In Progress"
+                                   class="status-radio"
+                                   id="status-progress" />
+                            <label for="status-progress" class="status-label">
+                                <i class="fas fa-spinner status-icon" style="color: #3b82f6;"></i>
+                                <span class="status-text">In Progress</span>
+                            </label>
+                        </div>
+                        <div class="status-option">
+                            <input type="radio"
+                                   asp-for="Task.Status"
+                                   value="Completed"
+                                   class="status-radio"
+                                   id="status-completed" />
+                            <label for="status-completed" class="status-label">
+                                <i class="fas fa-check-circle status-icon" style="color: #10b981;"></i>
+                                <span class="status-text">Completed</span>
+                            </label>
+                        </div>
+                    </div>
+                    <span asp-validation-for="Task.Status" class="validation-error">
+                       
+                    </span>
+                </div>
+
+                <!-- Form Actions -->
+                <div class="form-actions">
+                    @if (HttpContext.Session.GetString("UserRole") == "Admin")
+                    {
+                        <a href="/Admin/AdminDashboard" class="back-link btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Dashboard
+                        </a>
+                    }
+                    else
+                    {
+                        <a href="/User/UserDashboard" class="back-link btn btn-secondary">
+                            <i class="fas fa-arrow-left"></i> Back to Dashboard
+                        </a>
+                    }
+
+                    <button type="submit" class="submit-btn" id="submitBtn">
+                        <span id="submitText">
+                            <i class="fas fa-save"></i> Create Task
+                        </span>
+                        <span id="loadingText" style="display: none;">
+                            <div class="loading"></div> Creating...
+                        </span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Set minimum date to today
+            const dueDateInput = document.getElementById('dueDateInput');
+            const now = new Date();
+            const year = now.getFullYear();
+            const month = String(now.getMonth() + 1).padStart(2, '0');
+            const day = String(now.getDate()).padStart(2, '0');
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+
+            const minDateTime = `${year}-${month}-${day}T${hours}:${minutes}`;
+            dueDateInput.min = minDateTime;
+
+            // Set default value if from URL parameter
+            const urlParams = new URLSearchParams(window.location.search);
+            const dateParam = urlParams.get('date');
+            if (dateParam && !dueDateInput.value) {
+                dueDateInput.value = dateParam + 'T09:00';
+            }
+
+            // Form submission with loading state
+            document.getElementById('createTaskForm').addEventListener('submit', function (e) {
+                const submitBtn = document.getElementById('submitBtn');
+                const submitText = document.getElementById('submitText');
+                const loadingText = document.getElementById('loadingText');
+
+                submitBtn.disabled = true;
+                submitText.style.display = 'none';
+                loadingText.style.display = 'flex';
+                loadingText.style.alignItems = 'center';
+                loadingText.style.gap = '0.5rem';
+            });
+
+            // Character count for title
+            const titleInput = document.querySelector('input[asp-for="Task.Title"]');
+            if (titleInput) {
+                const titleGroup = titleInput.closest('.form-group');
+                const charCounter = document.createElement('div');
+                charCounter.style.fontSize = '0.875rem';
+                charCounter.style.color = '#718096';
+                charCounter.style.textAlign = 'right';
+                charCounter.style.marginTop = '0.25rem';
+                titleGroup.appendChild(charCounter);
+
+                function updateCharCount() {
+                    const count = titleInput.value.length;
+                    charCounter.textContent = `${count}/100 characters`;
+                    charCounter.style.color = count > 90 ? '#dc2626' : '#718096';
+                }
+
+                titleInput.addEventListener('input', updateCharCount);
+                updateCharCount();
+            }
+
+            // Character count for description
+            const descInput = document.querySelector('textarea[asp-for="Task.Description"]');
+            if (descInput) {
+                const descGroup = descInput.closest('.form-group');
+                const charCounter = document.createElement('div');
+                charCounter.style.fontSize = '0.875rem';
+                charCounter.style.color = '#718096';
+                charCounter.style.textAlign = 'right';
+                charCounter.style.marginTop = '0.25rem';
+                descGroup.appendChild(charCounter);
+
+                function updateDescCharCount() {
+                    const count = descInput.value.length;
+                    charCounter.textContent = `${count}/500 characters`;
+                    charCounter.style.color = count > 450 ? '#dc2626' : '#718096';
+                }
+
+                descInput.addEventListener('input', updateDescCharCount);
+                updateDescCharCount();
+            }
+
+            // Auto-hide success alert
+            const successAlert = document.getElementById('successAlert');
+            if (successAlert) {
+                setTimeout(() => {
+                    successAlert.style.opacity = '0';
+                    successAlert.style.transform = 'translateY(-10px)';
+                    setTimeout(() => {
+                        successAlert.style.display = 'none';
+                    }, 300);
+                }, 5000);
+            }
+
+            // Form validation enhancement
+            const form = document.getElementById('createTaskForm');
+            form.addEventListener('submit', function (e) {
+                let hasErrors = false;
+
+                // Clear previous custom errors
+                document.querySelectorAll('.custom-error').forEach(el => el.remove());
+
+                // Title validation
+                const title = titleInput.value.trim();
+                if (!title) {
+                    showCustomError(titleInput, 'Task title is required');
+                    hasErrors = true;
+                } else if (title.length < 3) {
+                    showCustomError(titleInput, 'Task title must be at least 3 characters');
+                    hasErrors = true;
+                }
+
+                // Due date validation
+                const dueDateValue = dueDateInput.value;
+                if (dueDateValue) {
+                    const selectedDate = new Date(dueDateValue);
+                    if (selectedDate < now) {
+                        showCustomError(dueDateInput, 'Due date cannot be in the past');
+                        hasErrors = true;
+                    }
+                }
+
+                if (hasErrors) {
+                    e.preventDefault();
+                    // Re-enable submit button
+                    const submitBtn = document.getElementById('submitBtn');
+                    const submitText = document.getElementById('submitText');
+                    const loadingText = document.getElementById('loadingText');
+
+                    submitBtn.disabled = false;
+                    submitText.style.display = 'flex';
+                    loadingText.style.display = 'none';
+                }
+            });
+
+            function showCustomError(input, message) {
+                const errorDiv = document.createElement('div');
+                errorDiv.className = 'validation-error custom-error';
+                errorDiv.innerHTML = `<i class="fas fa-exclamation-triangle"></i> ${message}`;
+                input.parentElement.appendChild(errorDiv);
+                input.style.borderColor = '#dc2626';
+            }
+
+            // Remove custom error on input
+            document.querySelectorAll('.form-input').forEach(input => {
+                input.addEventListener('input', function () {
+                    const customErrors = this.parentElement.querySelectorAll('.custom-error');
+                    customErrors.forEach(error => error.remove());
+                    this.style.borderColor = '#e2e8f0';
+                });
+            });
+        });
+    </script>
+
+    <partial name="_ValidationScriptsPartial" />
+</body>
+</html>

@@ -1,0 +1,60 @@
+﻿@page
+@model CMS2.Pages.Admin.ChangeTaskModel
+@{
+    ViewData["Title"] = "Change Task";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change Task - @Model.Username</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-800">
+    <div class="max-w-6xl mx-auto p-6">
+        <div class="flex justify-between items-center mb-6">
+            <h1 class="text-3xl font-bold text-indigo-700">Manage Tasks For @Model.Username</h1>
+            <a href="/Admin/AdminDashboard" class="bg-gray-500 hover:bg-gray-600 text-white px-4 py-2 rounded shadow">← Back</a>
+        </div>
+
+        @if (Model.Tasks.Count == 0)
+        {
+            <div class="bg-yellow-100 text-yellow-800 p-4 rounded shadow">
+                This user has no tasks yet.
+            </div>
+        }
+        else
+        {
+            <div class="bg-white shadow rounded overflow-hidden">
+                <table class="min-w-full table-auto">
+                    <thead class="bg-gray-100">
+                        <tr>
+                            <th class="px-4 py-2 border">Title</th>
+                            <th class="px-4 py-2 border">Status</th>
+                            <th class="px-4 py-2 border">Due Date</th>
+                            <th class="px-4 py-2 border">Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var task in Model.Tasks)
+                        {
+                            <tr class="hover:bg-gray-50 text-center">
+                                <td class="px-4 py-2 border">@task.Title</td>
+                                <td class="px-4 py-2 border">@task.Status</td>
+                                <td class="px-4 py-2 border">@task.DueDate.ToString("yyyy-MM-dd")</td>
+                                <td class="px-4 py-2 border space-x-3">
+                                    <!-- ✅ Truyền thêm return=admin để quay lại đúng trang -->
+                                    <a href="/Tasks/Edit?id=@task.Id&return=admin" class="text-blue-600 hover:underline">✏️ Edit</a>
+                                    <a href="/Tasks/Delete?id=@task.Id&return=admin" class="text-red-600 hover:underline">🗑️ Delete</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        }
+    </div>
+</body>
+</html>

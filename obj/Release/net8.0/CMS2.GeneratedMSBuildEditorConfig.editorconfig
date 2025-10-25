@@ -1,0 +1,141 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CMS2
+build_property.RootNamespace = CMS2
+build_property.ProjectDir = D:\FPT\PRN222\Gr4_PRN222_TaskManagementSystem\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\FPT\PRN222\Gr4_PRN222_TaskManagementSystem
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/AccessDenied.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxBY2Nlc3NEZW5pZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/ForgotPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/ResetPassword.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/SignIn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaWduSW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/SignOut.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaWduT3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/SignUp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxTaWduVXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Account/VerifyCode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWNjb3VudFxWZXJpZnlDb2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Admin/AdminDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQWRtaW5EYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Admin/BulkEmail.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQnVsa0VtYWlsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Admin/ChangeTask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cQ2hhbmdlVGFzay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Admin/EmailHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cRW1haWxIaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Admin/UserDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRtaW5cVXNlckRldGFpbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcQ3JlYXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcRGVsZXRlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcRWRpdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/Export.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcRXhwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/TaskHistory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcVGFza0hpc3RvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/View.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcVmlldy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Tasks/ViewAll.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVGFza3NcVmlld0FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/User/Profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxQcm9maWxlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/User/UserDashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcVXNlclxVc2VyRGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/FPT/PRN222/Gr4_PRN222_TaskManagementSystem/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-3mpfp614y4
