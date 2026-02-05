@@ -275,6 +275,7 @@
             border-radius: 16px;
             box-shadow: var(--shadow-sm);
             border: 1px solid var(--border-color);
+            height: 400px;
         }
 
         /* User Management Section */
@@ -424,6 +425,14 @@
             box-shadow: var(--shadow-md);
             color: white;
             text-decoration: none;
+        }
+
+        .action-btn:focus-visible,
+        .toggle-chart-btn:focus-visible,
+        .sign-out-btn:focus-visible,
+        .action-link:focus-visible {
+            outline: 3px solid rgba(59, 130, 246, 0.6);
+            outline-offset: 2px;
         }
 
         /* Stats Cards */
@@ -640,7 +649,7 @@
                         <i class="fas fa-chart-bar"></i>
                         Task Analytics
                     </h2>
-                    <button id="toggleChartType" class="toggle-chart-btn">
+                    <button id="toggleChartType" class="toggle-chart-btn" type="button" aria-pressed="false">
                         <i class="fas fa-exchange-alt"></i>
                         Switch Chart Type
                     </button>
@@ -703,7 +712,9 @@
 
     <script>
         let currentChartType = 'bar';
-        const ctx = document.getElementById('taskChart').getContext('2d');
+        const canvas = document.getElementById('taskChart');
+        const ctx = canvas ? canvas.getContext('2d') : null;
+        const toggleButton = document.getElementById('toggleChartType');
         
         const chartData = {
             labels: @Html.Raw(Json.Serialize(Model.ChartLabels)),
@@ -721,153 +732,104 @@
             }]
         };
 
-        let chart = new Chart(ctx, {
-            type: currentChartType,
-            data: chartData,
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { 
-                        display: true,
-                        position: 'bottom',
-                        labels: {
-                            padding: 20,
-                            usePointStyle: true,
-                            font: {
-                                family: 'Inter',
-                                size: 12,
-                                weight: '500'
-                            }
-                        }
-                    },
-                    datalabels: {
-                        color: '#ffffff',
+        const getChartOptions = () => ({
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: { 
+                    display: true,
+                    position: 'bottom',
+                    labels: {
+                        padding: 20,
+                        usePointStyle: true,
                         font: {
-                            weight: 'bold',
-                            size: 14
-                        },
-                        formatter: (value, context) => {
-                            if (currentChartType === 'pie') {
-                                const sum = context.chart._metasets[0].total;
-                                const percentage = (value / sum * 100).toFixed(1) + '%';
-                                return percentage;
-                            } else {
-                                return value;
-                            }
-                        },
-                        anchor: 'center',
-                        align: 'center'
+                            family: 'Inter',
+                            size: 12,
+                            weight: '500'
+                        }
                     }
                 },
-                scales: currentChartType === 'bar' ? {
-                    y: { 
-                        beginAtZero: true, 
-                        ticks: { 
-                            stepSize: 1,
-                            font: {
-                                family: 'Inter'
-                            }
-                        },
-                        grid: {
-                            color: 'rgba(0, 0, 0, 0.1)'
-                        }
+                datalabels: {
+                    color: '#ffffff',
+                    font: {
+                        weight: 'bold',
+                        size: 14
                     },
-                    x: {
-                        ticks: {
-                            font: {
-                                family: 'Inter'
-                            }
-                        },
-                        grid: {
-                            display: false
+                    formatter: (value, context) => {
+                        if (currentChartType === 'pie') {
+                            const data = context.chart.data.datasets[0]?.data || [];
+                            const sum = data.reduce((total, item) => total + item, 0);
+                            const percentage = sum > 0 ? (value / sum * 100).toFixed(1) + '%' : '0%';
+                            return percentage;
                         }
-                    }
-                } : {}
+                        return value;
+                    },
+                    anchor: 'center',
+                    align: 'center'
+                }
             },
-            plugins: [ChartDataLabels]
-        });
-
-        // Set chart container height
-        document.getElementById('taskChart').style.height = '400px';
-
-        document.getElementById("toggleChartType").addEventListener("click", (e) => {
-            e.target.classList.add('loading');
-            
-            setTimeout(() => {
-                chart.destroy();
-                currentChartType = currentChartType === 'bar' ? 'pie' : 'bar';
-                
-                chart = new Chart(ctx, {
-                    type: currentChartType,
-                    data: chartData,
-                    options: {
-                        responsive: true,
-                        maintainAspectRatio: false,
-                        plugins: {
-                            legend: { 
-                                display: true,
-                                position: 'bottom',
-                                labels: {
-                                    padding: 20,
-                                    usePointStyle: true,
-                                    font: {
-                                        family: 'Inter',
-                                        size: 12,
-                                        weight: '500'
-                                    }
-                                }
-                            },
-                            datalabels: {
-                                color: currentChartType === 'pie' ? '#ffffff' : '#ffffff',
-                                font: {
-                                    weight: 'bold',
-                                    size: 14
-                                },
-                                formatter: (value, context) => {
-                                    if (currentChartType === 'pie') {
-                                        const sum = context.chart._metasets[0].total;
-                                        const percentage = (value / sum * 100).toFixed(1) + '%';
-                                        return percentage;
-                                    } else {
-                                        return value;
-                                    }
-                                },
-                                anchor: 'center',
-                                align: 'center'
-                            }
-                        },
-                        scales: currentChartType === 'bar' ? {
-                            y: { 
-                                beginAtZero: true, 
-                                ticks: { 
-                                    stepSize: 1,
-                                    font: {
-                                        family: 'Inter'
-                                    }
-                                },
-                                grid: {
-                                    color: 'rgba(0, 0, 0, 0.1)'
-                                }
-                            },
-                            x: {
-                                ticks: {
-                                    font: {
-                                        family: 'Inter'
-                                    }
-                                },
-                                grid: {
-                                    display: false
-                                }
-                            }
-                        } : {}
+            scales: currentChartType === 'bar' ? {
+                y: { 
+                    beginAtZero: true, 
+                    ticks: { 
+                        stepSize: 1,
+                        font: {
+                            family: 'Inter'
+                        }
                     },
-                    plugins: [ChartDataLabels]
-                });
-                
-                e.target.classList.remove('loading');
-            }, 300);
+                    grid: {
+                        color: 'rgba(0, 0, 0, 0.1)'
+                    }
+                },
+                x: {
+                    ticks: {
+                        font: {
+                            family: 'Inter'
+                        }
+                    },
+                    grid: {
+                        display: false
+                    }
+                }
+            } : {}
         });
+
+        let chart = null;
+        if (ctx) {
+            chart = new Chart(ctx, {
+                type: currentChartType,
+                data: chartData,
+                options: getChartOptions(),
+                plugins: [ChartDataLabels]
+            });
+        }
+
+        if (toggleButton) {
+            toggleButton.addEventListener("click", (e) => {
+                const button = e.currentTarget;
+                button.classList.add('loading');
+                
+                setTimeout(() => {
+                    if (chart) {
+                        chart.destroy();
+                    }
+
+                    currentChartType = currentChartType === 'bar' ? 'pie' : 'bar';
+                    button.setAttribute('aria-pressed', currentChartType === 'pie' ? 'true' : 'false');
+                    
+                    if (ctx) {
+                        chart = new Chart(ctx, {
+                            type: currentChartType,
+                            data: chartData,
+                            options: getChartOptions(),
+                            plugins: [ChartDataLabels]
+                        });
+                    }
+                    
+                    button.classList.remove('loading');
+                }, 300);
+            });
+        }
 
         // Add smooth scrolling for internal links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {

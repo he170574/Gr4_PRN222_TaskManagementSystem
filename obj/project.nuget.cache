@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "l28bFCDe3doD6OHSzXGgfMgTQqP/oD9i+3aa+hwchffcWGjrIIyNgGLtQCw7k21YBhAeZnVFGS7agQ2SYRAlIg==",
+  "dgSpecHash": "MyDg1p9Gk0A=",
   "success": true,
-  "projectFilePath": "C:\\Users\\ADMIN\\Desktop\\PRN211 Project Learn\\CMS2\\CMS2\\CMS2.csproj",
+  "projectFilePath": "D:\\FPT\\PRN222\\Gr4_PRN222_TaskManagementSystem\\CMS2.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ADMIN\\.nuget\\packages\\azure.core\\1.38.0\\azure.core.1.38.0.nupkg.sha512",
     "C:\\Users\\ADMIN\\.nuget\\packages\\azure.identity\\1.11.4\\azure.identity.1.11.4.nupkg.sha512",
